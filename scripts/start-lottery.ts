@@ -1,6 +1,6 @@
 import { parseUnits } from "@ethersproject/units";
 import { ethers, network } from "hardhat";
-import lotteryABI from "../abi/PancakeSwapLottery.json";
+import lotteryABI from "../abi/JavaSwapLottery.json";
 import config from "../config";
 import { isTimeToRun, getEndTime, getTicketPrice } from "../utils";
 import logger from "../utils/logger";
@@ -19,7 +19,7 @@ const main = async () => {
   if (networkName === "testnet" || networkName === "mainnet") {
     const timeToRun = await isTimeToRun(networkName);
     if (timeToRun) {
-      // Check if the PancakeSwap Lottery / Chainlink Oracle smart contract addresses are set.
+      // Check if the JavaSwap Lottery / Chainlink Oracle smart contract addresses are set.
       if (
         config.Lottery[networkName] === ethers.constants.AddressZero ||
         config.Chainlink.Oracle[networkName] === ethers.constants.AddressZero
@@ -38,11 +38,7 @@ const main = async () => {
         ]);
 
         // Get ticket price (denominated in $Cake), for a given network.
-        const ticketPrice: string = await getTicketPrice(
-          networkName,
-          config.Ticket.Price[networkName],
-          config.Ticket.Precision[networkName]
-        );
+        const ticketPrice: string = "1";
 
         // Create, sign and broadcast transaction.
         const tx = await contract.startLottery(

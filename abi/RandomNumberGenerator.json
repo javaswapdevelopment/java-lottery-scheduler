@@ -114,7 +114,7 @@
   },
   {
     "inputs": [],
-    "name": "pancakeSwapLottery",
+    "name": "javaSwapLottery",
     "outputs": [
       {
         "internalType": "address",
@@ -193,7 +193,7 @@
     "inputs": [
       {
         "internalType": "address",
-        "name": "_pancakeSwapLottery",
+        "name": "_javaSwapLottery",
         "type": "address"
       }
     ],

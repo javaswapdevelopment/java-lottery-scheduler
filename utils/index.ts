@@ -3,7 +3,7 @@ import BigNumber from "bignumber.js";
 import { ethers } from "hardhat";
 import moment from "moment";
 import config from "../config";
-import lotteryABI from "../abi/PancakeSwapLottery.json";
+import lotteryABI from "../abi/JavaSwapLottery.json";
 
 /**
  * Get the ticket price, based on current network, as $Cake.
@@ -16,7 +16,6 @@ export const getTicketPrice = async (
 ): Promise<string> => {
   // Bind the smart contract address to the Chainlink AggregatorV3Interface ABI, for the given network.
   const contract = await ethers.getContractAt(AggregatorV3InterfaceABI, config.Chainlink.Oracle[networkName]);
-
   // Get the answer from the latest round data.
   const [, answer] = await contract.latestRoundData();
 

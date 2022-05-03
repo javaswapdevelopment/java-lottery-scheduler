@@ -1,5 +1,5 @@
 import { ethers, network } from "hardhat";
-import lotteryABI from "../abi/PancakeSwapLottery.json";
+import lotteryABI from "../abi/JavaSwapLottery.json";
 import randomGeneratorABI from "../abi/RandomNumberGenerator.json";
 import config from "../config";
 import logger from "../utils/logger";
@@ -19,7 +19,7 @@ const main = async () => {
   if (networkName === "testnet" || networkName === "mainnet") {
     const timeToRun = await isTimeToRun(networkName);
     if (timeToRun) {
-      // Check if the PancakeSwap Lottery smart contract address is set.
+      // Check if the JavaSwap Lottery smart contract address is set.
       if (config.Lottery[networkName] === ethers.constants.AddressZero) {
         throw new Error("Missing smart contract (Lottery) address.");
       }

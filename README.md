@@ -1,4 +1,4 @@
-# Pancake Lottery Scheduler
+# Java Lottery Scheduler
 
 ### Description
 
@@ -6,7 +6,7 @@ The scheduler is composed of multiple scripts used to call `startLottery`, `clos
 
 ### Configuration
 
-- `Lottery` Address of [PancakeSwapLottery](https://github.com/pancakeswap/pancake-contracts/tree/master/projects/lottery) contract.
+- `Lottery` Address of [JavaSwapLottery](https://github.com/javaswapdevelopment/Java-Farm/tree/master/contracts/lottery) contract.
 - `Ticket` Ticket Price (denominated in USD) and Precision.
 - `Discount` Divisor to compute discount magnitude for bulk ticket purchase.
 - `Rewards` Reward breakdown per bracket (total must be equal to 10,000).
@@ -39,13 +39,13 @@ $ yarn execute:[command]:[network]
 
 ```shell script
 # Close lottery.
-0 0,12 * * * cd ~/pancake-lottery-scheduler && yarn execute:close:mainnet
+0 0,12 * * * cd ~/java-lottery-scheduler && yarn execute:close:mainnet
 
 # Draw lottery.
-3 0,12 * * * cd ~/pancake-lottery-scheduler && yarn execute:draw:mainnet
+3 0,12 * * * cd ~/java-lottery-scheduler && yarn execute:draw:mainnet
 
 # Start lottery.
-5 0,12 * * * cd ~/pancake-lottery-scheduler && yarn execute:start:mainnet
+5 0,12 * * * cd ~/java-lottery-scheduler && yarn execute:start:mainnet
 ```
 
 ### Logging

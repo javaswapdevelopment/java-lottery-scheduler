@@ -18,8 +18,8 @@ const config: HardhatUserConfig = {
       accounts: [process.env.OPERATOR_PRIVATE_KEY!],
     },
     mainnet: {
-      url: "https://bsc-dataseed.binance.org/",
-      chainId: 56,
+      url: "https://speedy-nodes-nyc.moralis.io/e96d98785aa4103240081490/polygon/mainnet",
+      chainId: 137,
       accounts: [process.env.OPERATOR_PRIVATE_KEY!],
     },
   },
