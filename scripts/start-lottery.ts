@@ -2,7 +2,7 @@ import { parseUnits } from "@ethersproject/units";
 import { ethers, network } from "hardhat";
 import lotteryABI from "../abi/JavaSwapLottery.json";
 import config from "../config";
-import { isTimeToRun, getEndTime, getTicketPrice } from "../utils";
+import { isTimeToRun, getEndTime } from "../utils";
 import logger from "../utils/logger";
 
 /**
@@ -55,7 +55,7 @@ const main = async () => {
         } signer=${operator.address}`;
         console.log(message);
         logger.info({ message });
-      } catch (error) {
+      } catch (error:any) {
         const message = `[${new Date().toISOString()}] network=${networkName} message='${error.message}' signer=${
           operator.address
         }`;

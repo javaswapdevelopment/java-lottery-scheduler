@@ -46,7 +46,7 @@ const main = async () => {
         } signer=${operator.address}`;
         console.log(message);
         logger.info({ message });
-      } catch (error) {
+      } catch (error:any) {
         const message = `[${new Date().toISOString()}] network=${networkName} message='${error.message}' signer=${
           operator.address
         }`;
